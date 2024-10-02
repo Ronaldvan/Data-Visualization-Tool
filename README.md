@@ -1,4 +1,4 @@
-                                                                **Data Visualization Tool**
+**Data Visualization Tool**
 
 
 This is a Python-based Data Visualization Tool that allows users to load, clean, filter, and visualize datasets. The tool provides functionality to create bar and line charts, making it ideal for analyzing trends in data.
