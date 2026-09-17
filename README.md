@@ -1,66 +1,80 @@
-**Data Visualization Tool**
+Data Visualization Tool
 
+A Python-based data analysis tool for loading, cleaning, filtering, and visualizing datasets. The project uses a modular structure to separate data loading, cleaning, filtering, visualization, and export functionality.
 
-This is a Python-based Data Visualization Tool that allows users to load, clean, filter, and visualize datasets. The tool provides functionality to create bar and line charts, making it ideal for analyzing trends in data.
+Tech Stack
 
+* Python
+* Pandas — data loading and transformation
+* Matplotlib & Seaborn — data visualization
+* Tkinter — file selection interface
+* FPDF — basic PDF report generation
 
-**Features**
-* Data Loading: Load data from various file formats.
-* Data Cleaning: Automatically clean the dataset by removing duplicates and filling missing values.
-* Data Filtering: Filter the dataset based on specific criteria.
-* Data Visualization: Generate bar charts and line charts to visually represent the relationships between different data columns.
+Features
 
+* Load CSV and Excel datasets through a file-selection dialog.
+* Remove duplicate records from datasets.
+* Handle missing values using forward filling.
+* Filter data by column and value.
+* Generate bar charts and line charts.
+* Save generated visualizations as PNG files.
+* Generate a basic PDF summary of a dataset.
 
-**Files Overview**
-1. main.py: The main script to run the data visualization process. It loads, cleans, and visualizes the data using bar and line charts.
-    * Key Functions:
-        * main(): Orchestrates the data analysis workflow by calling functions to load, clean, and visualize the data.
-        * Visualization options: Bar charts or line charts based on the Month and Year columns.
-2. plot_functions.py: Contains functions for creating visualizations.
-    * Key Functions:
-        * plot_bar_chart(data, x_col, y_col): Plots a bar chart for the specified columns.
-        * plot_line_chart(data, x_col, y_col): Plots a line chart for the specified columns.
-3. filter_data.py: Provides a function to filter data based on specific criteria.
-    * Key Functions:
-        * filter_data(data, column, value): Filters the dataset by a given column and value.
-4. clean_data.py: Contains the data cleaning function.
-    * Key Functions:
-        * clean_data(data): Removes duplicates and fills missing values using forward fill.
+Project Structure
 
+* main.py — coordinates the data loading, cleaning, and visualization workflow.
+* load_file.py — loads CSV or Excel files selected by the user.
+* clean_data.py — removes duplicates and handles missing values.
+* filter_data.py — filters datasets using a specified column and value.
+* plot_functions.py — generates bar and line chart visualizations.
+* export.py — generates a basic PDF dataset report.
+* sales_data.csv — sample dataset.
+* bar_chart.png and line_chart.png — example visualization outputs.
 
-**Setup Instructions**
+How It Works
 
-1. Install Required Libraries:
-    * Install the necessary Python libraries using pip:bash
+The application follows a simple data-processing workflow:
 
-      _pip install matplotlib seaborn pandas_
+Select Dataset
+      |
+      v
+   Load Data
+      |
+      v
+  Clean Data
+      |
+      v
+Filter / Analyze
+      |
+      v
+  Visualize Data
+      |
+      v
+PNG Charts / PDF Report
 
-      
-2. Run the Tool:
-    * Execute the main.py script to load, clean, and visualize your data:bash
+This modular structure keeps individual responsibilities separated and makes the application easier to extend.
 
+Running the Project
 
-      _python main.py_
+Install the required Python libraries:
 
-      
-**Usage**
-* The tool automatically loads and cleans the dataset. It then generates visualizations based on the Month and Year columns.
-* You can choose between bar charts and line charts to analyze the data trends.
-* Custom data filtering can be applied by using the filter_data function from filter_data.py.
+pip install pandas matplotlib seaborn openpyxl fpdf
 
+Run the application:
 
-**Example**
-Here’s an example of how the tool works:
-1. Load and clean data.
-2. Visualize data using bar or line charts.
-3. Filter data by specific criteria to focus on particular subsets.
+python main.py
 
+Select a CSV or Excel dataset when prompted. The application will load and clean the dataset before generating visualizations.
 
-**Output**
-The charts will be saved as .png files in the working directory:
-* Bar Chart: bar_chart.png
-* Line Chart: line_chart.png
+Example Output
 
+The repository includes examples of the generated visualizations:
 
-**License**
-This project is open-source and available under the MIT License.
+* bar_chart.png
+* line_chart.png
+
+What I Learned
+
+This project gave me practical experience working with Python for data processing and visualization. I worked with Pandas for dataset manipulation, implemented reusable functions for different stages of the workflow, and used Matplotlib and Seaborn to turn processed data into visual outputs.
+
+It also helped reinforce the value of separating functionality into smaller modules rather than placing the entire data-processing workflow in a single script.
